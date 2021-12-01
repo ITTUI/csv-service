@@ -46,14 +46,14 @@ public class CSVReader {
  
             while ((lineText = lineReader.readLine()) != null) {
                 String[] data = lineText.split(",");
-                String lastname = data[0];
-                String firstname = data[1];
+                String lastname = data[0].replace("\"", "");
+                String firstname = data[1].replace("\"", "");
                 String test_1 = data[2];
                 String test_2 = data[3];
                 String test_3 = data[4];
                 String test_4 = data[5];
                 String final_grade = data[6];
-                String grade = data[7];
+                String grade = data[7].replace("\"", "");
  
                 stmt.setString(1, lastname);
                 stmt.setString(2, firstname);
